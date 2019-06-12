@@ -11,8 +11,7 @@ import 'quill/dist/quill.bubble.css'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-
-
+import store from '@/api/store.js'
 Vue.use(VueQuillEditor) // 挂载ui的样式资源
 Vue.config.productionTip = false
 Vue.use(ElementUI)
@@ -20,5 +19,6 @@ Vue.use(ElementUI)
 // 这里直接渲染了app根组件，所有的组件都通过app
 new Vue({
   render: h => h(App),
-  router // 注入之前挂载的路由
+  router, // 注入之前挂载的路由
+  store
 }).$mount('#app')
